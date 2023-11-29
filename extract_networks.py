@@ -23,21 +23,11 @@ class ExtractNetworkHandler(o.SimpleHandler):
             if len(self.rails) % 1000 == 0:
                 print(f"Found {len(self.rails)} rails...")
             self.rails.append(geojson.LineString([(n.lon, n.lat) for n in w.nodes]))
-            # self.rails.append(
-            #     geojson.Feature(
-            #         geometry=geojson.LineString([(n.lon, n.lat) for n in w.nodes])
-            #     )
-            # )
 
         if w.tags.get("highway") in self.highway_types:
             if len(self.roads) % 1000 == 0:
                 print(f"Found {len(self.roads)} roads...")
             self.roads.append(geojson.LineString([(n.lon, n.lat) for n in w.nodes]))
-            # self.roads.append(
-            #     geojson.Feature(
-            #         geometry=geojson.LineString([(n.lon, n.lat) for n in w.nodes])
-            #     )
-            # )
 
 
 def get_networks(full_fname):
@@ -88,7 +78,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--clean",
         default=False,
-        help="Clean any previous geojson files",
+        help="Remove any previous geojson files before running",
         action="store_true",
     )
     opt = parser.parse_args()
