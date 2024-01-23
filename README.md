@@ -49,3 +49,12 @@ options:
   --no-combine          Don't create the combined file
   --clean               Remove any previous geojson files before running
 ```
+
+## Tricks for working with planet and large files on memory constraints
+
+- Split by country
+
+Use [https://github.com/SteveC/osmsplit](https://github.com/SteveC/osmsplit)
+
+- Use `minifier.sh` to get just the relevant parts of the file so osmium can
+  load the whole country

@@ -162,3 +162,5 @@ cython_debug/
 rails_geojson/
 roads_geojson/
 osm_pbf/
+
+*.osm.pbf
