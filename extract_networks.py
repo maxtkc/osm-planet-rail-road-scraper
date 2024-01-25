@@ -12,7 +12,7 @@ class ExtractNetworkHandler(o.SimpleHandler):
         super(ExtractNetworkHandler, self).__init__()
         self.roads = []
         self.rails = []
-        self.highway_types = {"motorway", "trunk"}
+        self.highway_types = {"motorway", "trunk", "primary"}
         self.loaded = False
 
     def way(self, w):
